@@ -1,0 +1,12 @@
+<?php
+
+// Add a Logout button to Members login widget
+add_action( 'init', 'my_register_shortcodes' );
+function my_register_shortcodes() {
+    add_shortcode( 'my_logout_link', 'my_logout_link_shortcode' );
+}
+function my_logout_link_shortcode() {
+    return sprintf( '<a href="%s" class="button success logout small">Log Out</a>', esc_url( home_url() ) );
+}
+
+?>
